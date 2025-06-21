@@ -1,24 +1,41 @@
-import logo from './logo.svg';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Header from './components/Header';
+import Hero from './components/Hero';
+import Services from './components/Services';
+import EbookSection from './components/EbookSection';
+import Values from './components/Values';
+import TestimonialsSection from './components/TestimonialsSection';
+import Footer from './components/Footer';
+import JoinUsPage from './components/JoinUsPage';
+import ContactUsPage from './components/ContactUsPage';
+
+import WhatWeDo from './components/WhatWeDo';
+import JoinTeam from './components/JoinTeam';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Header />
+      <main>
+        <Routes>
+          <Route path="/" element={
+            <>
+              <Hero />
+              <Services />
+              <WhatWeDo />
+              <EbookSection />
+              <Values />
+              <TestimonialsSection />
+            </>
+          } />
+          <Route path="/join-us" element={<JoinUsPage />} />
+          <Route path="/contact-us" element={<ContactUsPage />} />
+        </Routes>
+      </main>
+      <Footer />
+    </Router>
   );
 }
 

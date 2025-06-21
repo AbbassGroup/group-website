@@ -1,0 +1,115 @@
+.values-section {
+  padding: 64px 0 48px;
+  background: var(--offwhite);
+  width: 100%;
+  margin-bottom: 4rem;
+}
+
+.values-section .section-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.values-section .section-header h2 {
+  font-size: 2.4rem;
+  color: var(--black);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.values-section .section-header p {
+  color: var(--black);
+  font-size: 1.1rem;
+  margin-bottom: 0;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.value-card {
+  background: var(--white);
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(158, 158, 158, 0.07);
+  padding: 2.5rem 1.5rem 2rem;
+  text-align: center;
+  transition: box-shadow 0.3s, transform 0.3s;
+  position: relative;
+  z-index: 1;
+}
+
+.value-card:hover {
+  box-shadow: 0 8px 32px rgba(158, 158, 158, 0.15);
+  transform: translateY(-6px) scale(1.03);
+}
+
+.value-icon {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 1.2rem;
+  background: var(--offwhite);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(158, 158, 158, 0.08);
+  transition: background 0.3s;
+}
+
+.value-card:hover .value-icon {
+  background: var(--gray);
+}
+
+.value-icon img {
+  width: 36px;
+  height: 36px;
+  transition: filter 0.3s;
+}
+
+.value-card:hover .value-icon img {
+  filter: brightness(0) invert(1);
+}
+
+.value-card h3 {
+  font-size: 1.2rem;
+  color: var(--black);
+  font-weight: 600;
+  margin-bottom: 0.7rem;
+  letter-spacing: 0.5px;
+}
+
+.value-card p {
+  color: var(--gray);
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .values-grid {
+    gap: 1.2rem;
+  }
+  .value-card {
+    padding: 2rem 1rem 1.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .values-section {
+    padding: 40px 0 24px;
+  }
+  .values-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .value-card {
+    padding: 1.2rem 0.7rem 1rem;
+  }
+  .section-header h2 {
+    font-size: 1.5rem;
+  }
+} 

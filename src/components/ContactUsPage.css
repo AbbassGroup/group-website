@@ -1,0 +1,310 @@
+/* Contact Us Page Styles */
+.contactus-page {
+  min-height: 100vh;
+}
+
+/* Hero Section */
+.contactus-hero-section {
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.contactus-hero-overlay {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 3rem;
+  text-align: center;
+  border-radius: 10px;
+  color: white;
+}
+
+.contactus-hero-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.contactus-hero-subtitle {
+  font-size: 1.5rem;
+  font-weight: 300;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Main Content Section */
+.contactus-content-section {
+  padding: 5rem 0;
+  background: #f8f9fa;
+}
+
+.contactus-content-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+/* Left Side - Info Section */
+.contactus-info-col {
+  padding: 2rem;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.contactus-info-col h2 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+.contactus-info-col p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+.contactus-contact-info {
+  margin-bottom: 2rem;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #eee;
+}
+
+.contact-item strong {
+  min-width: 80px;
+  color: #333;
+  font-weight: 600;
+}
+
+.contact-item a {
+  color: #007bff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-item a:hover {
+  color: #0056b3;
+}
+
+.contactus-services {
+  margin-bottom: 2rem;
+}
+
+.contactus-services h3 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.contactus-services ul {
+  list-style: none;
+  padding: 0;
+}
+
+.contactus-services li {
+  padding: 0.5rem 0;
+  color: #666;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.contactus-services li:before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: #007bff;
+  font-weight: bold;
+}
+
+.contactus-hours {
+  margin-top: 2rem;
+}
+
+.contactus-hours h3 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.hours-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #eee;
+}
+
+.hours-item strong {
+  color: #333;
+  font-weight: 600;
+}
+
+/* Right Side - Form Section */
+.contactus-form-col {
+  padding: 2rem;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.contactus-form-col h2 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 2rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.contactus-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+}
+
+.contactus-form input,
+.contactus-form select,
+.contactus-form textarea {
+  padding: 1rem;
+  border: 2px solid #e9ecef;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+  background: #fff;
+}
+
+.contactus-form input:focus,
+.contactus-form select:focus,
+.contactus-form textarea:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+}
+
+.contactus-form textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.contactus-submit-btn {
+  background: linear-gradient(135deg, #28a745, #20c997);
+  color: white;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+}
+
+.contactus-submit-btn:hover {
+  background: linear-gradient(135deg, #20c997, #17a2b8);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(40, 167, 69, 0.3);
+}
+
+/* Map Section */
+.contactus-map-section {
+  padding: 4rem 0;
+  background: white;
+}
+
+.map-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  text-align: center;
+}
+
+.map-container h2 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 2rem;
+  font-weight: 600;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .contactus-content-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .contactus-hero-title {
+    font-size: 2.5rem;
+  }
+
+  .contactus-hero-subtitle {
+    font-size: 1.2rem;
+  }
+
+  .contactus-info-col h2,
+  .contactus-form-col h2 {
+    font-size: 2rem;
+  }
+
+  .contact-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .contact-item strong {
+    min-width: auto;
+  }
+
+  .hours-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contactus-hero-overlay {
+    padding: 2rem;
+    margin: 0 1rem;
+  }
+
+  .contactus-hero-title {
+    font-size: 2rem;
+  }
+
+  .contactus-content-section {
+    padding: 3rem 0;
+  }
+
+  .contactus-content-container {
+    padding: 0 1rem;
+  }
+
+  .contactus-info-col,
+  .contactus-form-col {
+    padding: 1.5rem;
+  }
+} 
