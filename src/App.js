@@ -4,14 +4,14 @@ import Header from './components/Header';
 import Hero from './components/Hero';
 import Services from './components/Services';
 import EbookSection from './components/EbookSection';
+import CtaJoinUs from './components/CtaJoinUs';
 import Values from './components/Values';
 import TestimonialsSection from './components/TestimonialsSection';
 import Footer from './components/Footer';
-import JoinUsPage from './components/JoinUsPage';
-import ContactUsPage from './components/ContactUsPage';
+import JoinUsPage from './pages/JoinUsPage';
+import ContactUsPage from './pages/ContactUsPage';
 
 import WhatWeDo from './components/WhatWeDo';
-import JoinTeam from './components/JoinTeam';
 import './App.css';
 
 function App() {
@@ -27,6 +27,7 @@ function App() {
               <WhatWeDo />
               <EbookSection />
               <Values />
+              <CtaJoinUs />
               <TestimonialsSection />
             </>
           } />

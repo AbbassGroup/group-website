@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import './JoinUsPage.css';
-import GoogleMap from './GoogleMap';
+import '../pages/JoinUsPage.css';
+import GoogleMap from '../components/GoogleMap';
 
 const businessDivisions = [
   'Business Brokers',
@@ -61,7 +61,7 @@ const JoinUsPage = () => {
             <div className="joinus-contact-info">
               <div className="contact-item">
                 <strong>Email:</strong>
-                <a href="mailto:info@abbass.group">info@abbass.group</a>
+                <a href="mailto:info@abbass.group">career@abbass.group</a>
               </div>
               <div className="contact-item">
                 <strong>Phone:</strong>
@@ -164,8 +164,8 @@ const JoinUsPage = () => {
       <div className="joinus-map-section">
         <div className="map-container">
           <h2>Find Us</h2>
-          <GoogleMap title="ABBASS Group Location - South Melbourne" />
         </div>
+        <GoogleMap title="ABBASS Group Location - South Melbourne" />
       </div>
     </div>
   );

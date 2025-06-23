@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './ContactUsPage.css';
-import GoogleMap from './GoogleMap';
+import GoogleMap from '../components/GoogleMap';
 
 const businessDivisions = [
   'Business Brokers',
@@ -66,16 +66,6 @@ const ContactUsPage = () => {
                 <strong>Location:</strong>
                 <span>102/24 Albert Road, South Melbourne, VIC 3205</span>
               </div>
-            </div>
-
-            <div className="contactus-services">
-              <h3>Our Services</h3>
-              <ul>
-                <li>Business Brokers - Buy and sell businesses</li>
-                <li>Advocacy - Expert legal representation</li>
-                <li>Finance - Tailored financial solutions</li>
-                <li>Global Properties - International real estate</li>
-              </ul>
             </div>
 
             <div className="contactus-hours">
@@ -158,8 +148,8 @@ const ContactUsPage = () => {
       <div className="contactus-map-section">
         <div className="map-container">
           <h2>Find Us</h2>
-          <GoogleMap title="ABBASS Group Location - South Melbourne" />
         </div>
+        <GoogleMap title="ABBASS Group Location - South Melbourne" />
       </div>
     </div>
   );
