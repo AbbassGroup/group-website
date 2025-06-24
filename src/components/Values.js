@@ -40,7 +40,7 @@ const Values = () => {
       <div className="container">
         <div className="section-header">
           <h2>Our Values</h2>
-          <p>The principles that guide us in delivering exceptional real estate services</p>
+          {/* <p>The principles that guide us in delivering exceptional real estate services</p> */}
         </div>
         <div className="values-grid">
           {values.map((value, index) => (

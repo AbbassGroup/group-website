@@ -1,5 +1,6 @@
 /* Testimonials Section */
 .testimonials {
+    background-image: linear-gradient(rgba(41, 43, 44, 0.6), rgba(41, 43, 44, 0.6)), url('../assets/images/testimonialsbg.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;

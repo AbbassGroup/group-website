@@ -24,7 +24,7 @@
 
 .cta-join-us-button {
   display: inline-block;
-  background: linear-gradient(135deg, var(--gray), var(--black));
+  background: var(--black);
   color: var(--white);
   padding: 1rem 2.5rem;
   border-radius: 50px;
@@ -38,6 +38,7 @@
   transform: translateY(-3px);
   background: var(--gray);
   transition: all 0.3s ease;
+  color: var(--black);
   /* box-shadow: 0 6px 20px rgba(0, 123, 255, 0.3); */
 }
 

@@ -18,6 +18,9 @@ const JoinUsPage = () => {
     comments: '',
     cv: null
   });
+  const [loading, setLoading] = useState(false);
+  const [message, setMessage] = useState('');
+  const [messageType, setMessageType] = useState(''); // 'success' or 'error'
 
   const handleChange = (e) => {
     const { name, value, files } = e.target;
@@ -28,22 +31,66 @@ const JoinUsPage = () => {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Submission logic here
-    console.log('Form submitted:', form);
+    setLoading(true);
+    setMessage('');
+
+    try {
+      // Create FormData for file upload
+      const formData = new FormData();
+      formData.append('name', form.name);
+      formData.append('email', form.email);
+      formData.append('contact', form.contact);
+      formData.append('division', form.division);
+      formData.append('comments', form.comments);
+      formData.append('cv', form.cv);
+
+      const response = await fetch('http://localhost:5000/api/join-us', {
+        method: 'POST',
+        body: formData // Don't set Content-Type header for FormData
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        setMessage('Thank you for your application! We will review your CV and get back to you soon.');
+        setMessageType('success');
+        // Reset form
+        setForm({
+          name: '',
+          email: '',
+          contact: '',
+          division: '',
+          comments: '',
+          cv: null
+        });
+      } else {
+        setMessage(result.message || 'Something went wrong. Please try again.');
+        setMessageType('error');
+      }
+      // Hide message after 3 seconds
+      setTimeout(() => {
+        setMessage('');
+        setMessageType('');
+      }, 3000);
+    } catch (error) {
+      console.error('Error submitting application:', error);
+      setMessage('Network error. Please check your connection and try again.');
+      setMessageType('error');
+      setTimeout(() => {
+        setMessage('');
+        setMessageType('');
+      }, 3000);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
     <div className="joinus-page">
       {/* Hero Section */}
-      <section
-        className="joinus-hero-section"
-        style={{
-          backgroundImage:
-            "url('https://images.unsplash.com/photo-1750056393331-82e69d28c9d9?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')"
-        }}
-      >
+      <section className="joinus-hero-section">
         <div className="joinus-hero-overlay">
           <h1 className="joinus-hero-title">Join Our Team</h1>
           <p className="joinus-hero-subtitle">Be part of something extraordinary</p>
@@ -61,7 +108,7 @@ const JoinUsPage = () => {
             <div className="joinus-contact-info">
               <div className="contact-item">
                 <strong>Email:</strong>
-                <a href="mailto:info@abbass.group">career@abbass.group</a>
+                <a href="mailto:info@abbass.group">careers@abbass.group</a>
               </div>
               <div className="contact-item">
                 <strong>Phone:</strong>
@@ -75,13 +122,11 @@ const JoinUsPage = () => {
 
             <div className="joinus-benefits">
               <h3>Why Join ABBASS?</h3>
-              <ul>
                 <li>Dynamic and innovative work environment</li>
                 <li>Opportunities for career growth</li>
-                <li>Competitive compensation packages</li>
+                <li>Flexibility and autonomy in how you work</li>
                 <li>Work with industry experts</li>
                 <li>Make a real impact in the market</li>
-              </ul>
             </div>
           </div>
 
@@ -97,6 +142,7 @@ const JoinUsPage = () => {
                   value={form.name}
                   onChange={handleChange}
                   required
+                  disabled={loading}
                 />
               </div>
               <div className="form-row">
@@ -107,6 +153,7 @@ const JoinUsPage = () => {
                   value={form.email}
                   onChange={handleChange}
                   required
+                  disabled={loading}
                 />
               </div>
               <div className="form-row">
@@ -117,6 +164,7 @@ const JoinUsPage = () => {
                   value={form.contact}
                   onChange={handleChange}
                   required
+                  disabled={loading}
                 />
               </div>
               <div className="form-row">
@@ -125,6 +173,7 @@ const JoinUsPage = () => {
                   value={form.division}
                   onChange={handleChange}
                   required
+                  disabled={loading}
                 >
                   <option value="">Select Business Division</option>
                   {businessDivisions.map((div, idx) => (
@@ -134,13 +183,14 @@ const JoinUsPage = () => {
               </div>
               <div className="form-row">
                 <label className="cv-label">
-                  Upload CV (PDF)
+                  Upload CV (PDF, DOC, DOCX)
                   <input
                     type="file"
                     name="cv"
-                    accept="application/pdf"
+                    accept=".pdf,.doc,.docx"
                     onChange={handleChange}
                     required
+                    disabled={loading}
                   />
                 </label>
                 {form.cv && <span className="cv-filename">{form.cv.name}</span>}
@@ -152,9 +202,23 @@ const JoinUsPage = () => {
                   value={form.comments}
                   onChange={handleChange}
                   rows={4}
+                  disabled={loading}
                 />
               </div>
-              <button type="submit" className="joinus-submit-btn">Submit Application</button>
+              <button 
+                type="submit" 
+                className="joinus-submit-btn"
+                disabled={loading}
+              >
+                {loading ? 'Submitting...' : 'Submit Application'}
+              </button>
+              
+              {/* Message Display */}
+              {message && (
+                <div className={`form-message ${messageType}`}>
+                  {message}
+                </div>
+              )}
             </form>
           </div>
         </div>

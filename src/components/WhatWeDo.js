@@ -18,27 +18,32 @@ const services = [
   {
     title: 'Sell a Business',
     description: 'Get the best value for your business with our expert brokers.',
-    icon: serviceIcons[0]
+    icon: serviceIcons[0],
+    link: '/businessbrokers'
   },
   {
     title: 'Buy a Business',
     description: 'Find the perfect business opportunity with our guidance.',
-    icon: serviceIcons[1]
+    icon: serviceIcons[1],
+    link: '/businessbrokers'
   },
   {
     title: 'Buyer Advocacy',
     description: 'Professional representation for property buyers.',
-    icon: serviceIcons[2]
+    icon: serviceIcons[2],
+    link: '/advocacy'
   },
   {
     title: 'Invest in Dubai',
     description: 'Explore premium real estate opportunities in Dubai.',
-    icon: serviceIcons[3]
+    icon: serviceIcons[3],
+    link: 'https://abbassglobalproperties.com/'
   },
   {
     title: 'Finance Consultations',
     description: 'Expert financial advice and funding solutions.',
-    icon: serviceIcons[4]
+    icon: serviceIcons[4],
+    link: '/finance'
   }
 ];
 
@@ -58,7 +63,7 @@ const WhatWeDo = () => {
               <span className="icon">{service.icon}</span>
               <h3>{service.title}</h3>
               <p>{service.description}</p>
-              <a href='/contact' className="btn btn-secondary get-started-btn">Get Started</a>
+              <a href={service.link} className="btn btn-secondary get-started-btn">Get Started</a>
             </div>
           ))}
         </div>

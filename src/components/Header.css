@@ -57,8 +57,8 @@
   font-size: 16px;
   /* font-weight: 500; */
   line-height: 1.5;
-  /* letter-spacing: 0.01em; */
-  margin: 0 0.51rem;
+  letter-spacing: 0.07em;
+  margin: 0 1.5rem;
 }
 
 .nav-link {
@@ -239,4 +239,23 @@
   background-color: transparent;
   color: var(--white);
   border: 1px solid var(--white);
+}
+
+.navbar.dark {
+  background: #181c23 !important;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+}
+
+.navbar.dark .nav-link,
+.navbar.dark .navbar-logo,
+.navbar.dark .menu-icon {
+  color: #fff !important;
+}
+
+.navbar.dark .nav-link:hover {
+  color: #90caf9 !important;
+}
+
+.navbar.dark .navbar-logo img {
+  filter: brightness(1.1) contrast(1.1);
 } 

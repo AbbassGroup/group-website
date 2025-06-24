@@ -5,10 +5,10 @@ import advocacyLogo from '../assets/images/group_website_logos/Advocacy.png';
 import financeLogo from '../assets/images/group_website_logos/Finance.png';
 import globalPropertiesLogo from '../assets/images/group_website_logos/Global Properties.png';
 
-import businessBrokerImage from '../assets/images/group_website_images/global_properties.jpg';
-import advocacyImage from '../assets/images/group_website_images/global_properties.jpg';
-import financeImage from '../assets/images/group_website_images/global_properties.jpg';
-import globalPropertiesImage from '../assets/images/group_website_images/global_properties.jpg';
+import businessBrokerImage from '../assets/images/group_website_images/businessbroker.jpg';
+import advocacyImage from '../assets/images/group_website_images/advocacy.jpg';
+import financeImage from '../assets/images/group_website_images/advocacy2.jpg';
+import globalPropertiesImage from '../assets/images/group_website_images/advocacy3.jpg';
 
 const Services = () => {
   const divisions = [
@@ -24,7 +24,7 @@ const Services = () => {
       logo: advocacyLogo,
       image: advocacyImage,
       link: '/advocacy',
-      cta: 'Buy a Business'
+      cta: 'Buy a Property'
     },
     {
       description: 'Finance solutions tailored to your needs.',
@@ -34,10 +34,10 @@ const Services = () => {
       cta: 'Get Finance'
     },
     {
-      description: 'Invest in premium properties worldwide.',
+      description: 'Invest in premium properties in Dubai.',
       logo: globalPropertiesLogo,
       image: globalPropertiesImage,
-      link: '/global-properties',
+      link: 'https://abbassglobalproperties.com/',
       cta: 'Invest in Dubai'
     }
   ];

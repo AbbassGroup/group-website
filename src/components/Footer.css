@@ -65,6 +65,15 @@
   opacity: 0.85;
 }
 
+.footer-col ul li a {
+  color: var(--white);
+  text-decoration: none;
+}
+
+.footer-col ul li a:hover {
+  color: var(--primary);
+}
+
 .footer-contact-label,
 .footer-community-label {
   color: var(--white);

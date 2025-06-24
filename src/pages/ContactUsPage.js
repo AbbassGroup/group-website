@@ -17,28 +17,69 @@ const ContactUsPage = () => {
     division: '',
     comments: ''
   });
+  const [loading, setLoading] = useState(false);
+  const [message, setMessage] = useState('');
+  const [messageType, setMessageType] = useState(''); // 'success' or 'error'
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setForm({ ...form, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Submission logic here
-    console.log('Form submitted:', form);
+    setLoading(true);
+    setMessage('');
+
+    try {
+      const response = await fetch('http://localhost:5000/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(form)
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        setMessage('Thank you for your message! We will get back to you soon.');
+        setMessageType('success');
+        // Reset form
+        setForm({
+          name: '',
+          email: '',
+          contact: '',
+          division: '',
+          comments: ''
+        });
+      } else {
+        setMessage(result.message || 'Something went wrong. Please try again.');
+        setMessageType('error');
+      }
+      // Hide message after 3 seconds
+      setTimeout(() => {
+        setMessage('');
+        setMessageType('');
+      }, 3000);
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      setMessage('Network error. Please check your connection and try again.');
+      setMessageType('error');
+      setTimeout(() => {
+        setMessage('');
+        setMessageType('');
+      }, 3000);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
     <div className="contactus-page">
       {/* Hero Section */}
       <section
-        className="contactus-hero-section"
-        style={{
-          backgroundImage:
-            "url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')"
-        }}
-      >
+        className="contactus-hero-section">
         <div className="contactus-hero-overlay">
           <h1 className="contactus-hero-title">Contact Us</h1>
           <p className="contactus-hero-subtitle">Get in touch with our team</p>
@@ -68,17 +109,12 @@ const ContactUsPage = () => {
               </div>
             </div>
 
-            <div className="contactus-hours">
-              <h3>Business Hours</h3>
-              <div className="hours-item">
-                <strong>Monday - Friday:</strong> 9:00 AM - 6:00 PM
-              </div>
-              <div className="hours-item">
-                <strong>Saturday:</strong> 10:00 AM - 4:00 PM
-              </div>
-              <div className="hours-item">
-                <strong>Sunday:</strong> Closed
-              </div>
+            {/* ABBASS Group Support Message */}
+            <div className="abbass-support-message">
+              <p>
+                At The ABBASS Group, your success is our priority. Whether you're looking for expert advice on finance, property, business sales, or simply have a question about how we can support your journey, we're just a message away.<br /><br />
+                Our dedicated team is here to provide prompt, diligent, and tailored support across all our services. Fill out the form, give us a call, or send us an email, we'll get back to you as soon as we can.
+              </p>
             </div>
           </div>
 
@@ -94,6 +130,7 @@ const ContactUsPage = () => {
                   value={form.name}
                   onChange={handleChange}
                   required
+                  disabled={loading}
                 />
               </div>
               <div className="form-row">
@@ -104,6 +141,7 @@ const ContactUsPage = () => {
                   value={form.email}
                   onChange={handleChange}
                   required
+                  disabled={loading}
                 />
               </div>
               <div className="form-row">
@@ -114,6 +152,7 @@ const ContactUsPage = () => {
                   value={form.contact}
                   onChange={handleChange}
                   required
+                  disabled={loading}
                 />
               </div>
               <div className="form-row">
@@ -122,6 +161,7 @@ const ContactUsPage = () => {
                   value={form.division}
                   onChange={handleChange}
                   required
+                  disabled={loading}
                 >
                   <option value="">Select Business Division</option>
                   {businessDivisions.map((div, idx) => (
@@ -136,9 +176,23 @@ const ContactUsPage = () => {
                   value={form.comments}
                   onChange={handleChange}
                   rows={4}
+                  disabled={loading}
                 />
               </div>
-              <button type="submit" className="contactus-submit-btn">Send Message</button>
+              <button 
+                type="submit" 
+                className="contactus-submit-btn"
+                disabled={loading}
+              >
+                {loading ? 'Sending...' : 'Send Message'}
+              </button>
+              
+              {/* Message Display */}
+              {message && (
+                <div className={`form-message ${messageType}`}>
+                  {message}
+                </div>
+              )}
             </form>
           </div>
         </div>

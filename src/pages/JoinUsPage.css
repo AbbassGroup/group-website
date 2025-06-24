@@ -6,6 +6,7 @@
 /* Hero Section */
 .joinus-hero-section {
   height: 100vh;
+  background-image: url('../assets/images/join-us-2.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -121,16 +122,10 @@
   font-weight: 600;
 }
 
-.joinus-benefits ul {
-  list-style: none;
-  padding: 0;
-}
-
 .joinus-benefits li {
   padding: 0.5rem 0;
   color: var(--gray);
   position: relative;
-  padding-left: 1.5rem;
 }
 
 
@@ -180,6 +175,14 @@
   box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
 }
 
+.joinus-form input:disabled,
+.joinus-form select:disabled,
+.joinus-form textarea:disabled {
+  background-color: #f5f5f5;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
 .joinus-form textarea {
   resize: vertical;
   min-height: 100px;
@@ -200,6 +203,12 @@
   cursor: pointer;
 }
 
+.cv-label input[type="file"]:disabled {
+  background-color: #f5f5f5;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
 .cv-filename {
   font-size: 0.9rem;
   color: var(--gray);
@@ -207,7 +216,7 @@
 }
 
 .joinus-submit-btn {
-  background: linear-gradient(135deg, var(--gray), var(--black));
+  background: var(--black);
   color: var(--white);
   padding: 1rem 2rem;
   border: none;
@@ -219,11 +228,37 @@
   margin-top: 1rem;
 }
 
-.joinus-submit-btn:hover {
+.joinus-submit-btn:hover:not(:disabled) {
   background: var(--gray);
-  /* box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3); */
-  /* transform: 0.3s ease; */
+  color: var(--black);
   transition: all 0.3s ease;
+}
+
+.joinus-submit-btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* Form Message Styles */
+.form-message {
+  padding: 1rem;
+  border-radius: 8px;
+  margin-top: 1rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+.form-message.success {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.form-message.error {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
 }
 
 /* Map Section */

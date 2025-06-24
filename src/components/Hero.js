@@ -1,7 +1,10 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Hero.css';
 
 const Hero = () => {
+  const navigate = useNavigate();
+
   return (
     <section className="hero">
       <div className="hero-overlay"></div>
@@ -10,13 +13,10 @@ const Hero = () => {
           <h1>Australia's Trusted Partner in Property, Business, and Finance</h1>
           <p>Helping Australians invest smarter, buy better, and grow with expert guidance.</p>
           <div className="hero-buttons">
-            <button className="btn btn-primary">Find the Right Service for You</button>
-            <button className="btn btn-secondary">Join ABBASS</button>
+            <button className="btn btn-primary" onClick={() => navigate('/contact-us')}>Find the Right Service for You</button>
+            <button className="btn btn-secondary" onClick={() => navigate('/join-us')}>Join ABBASS</button>
           </div>
         </div>
-        {/* <div className="hero-image">
-          <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80" alt="Professional business meeting" />
-        </div> */}
       </div>
     </section>
   );
