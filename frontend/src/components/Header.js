@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import './Header.css';
-import logo from '../assets/images/nav_logo.png';
 import logoWhite from '../assets/images/nav_logo_white.png';
 
 const Header = ({ disableScrollEffect, dark }) => {
