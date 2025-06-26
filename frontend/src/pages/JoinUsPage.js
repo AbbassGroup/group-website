@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import '../pages/JoinUsPage.css';
 import GoogleMap from '../components/GoogleMap';
 
+const HOSTNAME = process.env.REACT_APP_HOSTNAME || 'localhost';
+const PORT = process.env.REACT_APP_PORT || 5000;
+
 const businessDivisions = [
   'Business Brokers',
   'Advocacy',
@@ -46,7 +49,7 @@ const JoinUsPage = () => {
       formData.append('comments', form.comments);
       formData.append('cv', form.cv);
 
-      const response = await fetch('http://localhost:5000/api/join-us', {
+      const response = await fetch(`http://${HOSTNAME}:${PORT}/api/join-us`, {
         method: 'POST',
         body: formData // Don't set Content-Type header for FormData
       });

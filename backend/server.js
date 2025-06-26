@@ -82,12 +82,13 @@ app.use('*', (req, res) => {
 // Error handling middleware
 app.use(errorHandler);
 
+const HOSTNAME = process.env.HOSTNAME || 'localhost';
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
   console.log(`🚀 Server running on port ${PORT}`);
   console.log(`📊 Environment: ${process.env.NODE_ENV}`);
-  console.log(`🌐 Health check: http://localhost:${PORT}/api/health`);
+  console.log(`🌐 Health check: http://${HOSTNAME}:${PORT}/api/health`);
 });
 
 module.exports = app; 

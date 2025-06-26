@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import './ContactUsPage.css';
 import GoogleMap from '../components/GoogleMap';
 
+const HOSTNAME = process.env.REACT_APP_HOSTNAME || 'localhost';
+const PORT = process.env.REACT_APP_PORT || 5000;
+
 const businessDivisions = [
   'Business Brokers',
   'Advocacy',
@@ -32,7 +35,7 @@ const ContactUsPage = () => {
     setMessage('');
 
     try {
-      const response = await fetch('http://localhost:5000/api/contact', {
+      const response = await fetch(`http://${HOSTNAME}:${PORT}/api/contact`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
