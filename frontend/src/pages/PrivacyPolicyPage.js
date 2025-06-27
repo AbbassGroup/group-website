@@ -6,8 +6,8 @@ const PrivacyPolicyPage = () => (
     <h1 className="privacy-policy-title">Privacy Policy</h1>
     <div className="privacy-policy-container">
       <p className="privacy-policy-intro">
-        This Privacy Policy applies to all personal information collected by Abbass Advocacy Pty Ltd via the website located at
-        <a href="https://abbass.com.au/businessbrokers/" target="_blank" rel="noopener noreferrer"> https://abbass.com.au/businessbrokers/</a>.
+        This Privacy Policy applies to all personal information collected by Abbass Advocacy Pty Ltd T/A Abbass Group via the website located at
+        <a href="https://abbass.com.au/" target="_blank" rel="noopener noreferrer"> https://abbass.com.au/</a>.
       </p>
       <div className="privacy-policy-section">
         <span className="privacy-policy-section-number">1.</span>
@@ -62,7 +62,8 @@ const PrivacyPolicyPage = () => (
         <span className="privacy-policy-section-number">8.</span>
         <strong> How to contact us about privacy</strong>
         <p>
-          If you have any queries, or if you seek access to your personal information, or if you have a complaint about our privacy practices, you can contact us at <a href="mailto:info@abbass.group">info@abbass.group</a>.
+          If you have any queries, or if you seek access to your personal information, or if you have a complaint about our privacy practices, you can contact us through:
+          <a href="mailto:info@abbass.group">info@abbass.group</a>
         </p>
       </div>
     </div>

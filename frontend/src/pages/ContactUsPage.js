@@ -81,11 +81,29 @@ const ContactUsPage = () => {
   return (
     <div className="contactus-page">
       {/* Hero Section */}
-      <section
-        className="contactus-hero-section">
+      <section className="contactus-hero-section">
         <div className="contactus-hero-overlay">
           <h1 className="contactus-hero-title">Contact Us</h1>
           <p className="contactus-hero-subtitle">Get in touch with our team</p>
+        </div>
+        <div
+          className="contactus-scroll-arrow"
+          onClick={() => {
+            const el = document.querySelector('.contactus-content-section');
+            if (el) el.scrollIntoView({ behavior: 'smooth' });
+          }}
+          tabIndex={0}
+          role="button"
+          aria-label="Scroll to next section"
+          onKeyPress={e => { if (e.key === 'Enter' || e.key === ' ') {
+            const el = document.querySelector('.contactus-content-section');
+            if (el) el.scrollIntoView({ behavior: 'smooth' });
+          }}}
+        >
+          <svg className="down-arrow-svg" width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="24" cy="24" r="24" fill="rgba(0,0,0,0.0)"/>
+            <path d="M16 20L24 28L32 20" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
         </div>
       </section>
 
