@@ -32,6 +32,7 @@ const Header = ({ disableScrollEffect, dark }) => {
           <span role="img" aria-label="menu">&#9776;</span>
         </div>
         <ul className="nav-menu">
+          <li className="nav-item"><a href="/" className="nav-link">Home</a></li>
           <li className="nav-item"><a href="/businessbrokers" className="nav-link">Business Brokers</a></li>
           <li className="nav-item"><a href="/advocacy" className="nav-link">Advocacy</a></li>
           <li className="nav-item"><a href="/finance" className="nav-link">Finance</a></li>
