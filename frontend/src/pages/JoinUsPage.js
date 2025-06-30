@@ -4,7 +4,7 @@ import GoogleMap from '../components/GoogleMap';
 
 const HOSTNAME = process.env.REACT_APP_HOSTNAME || 'localhost';
 const PORT = process.env.REACT_APP_PORT || 5000;
-
+const API_BASE_URL = process.env.REACT_APP_API_URL || 'https://apigroup.abbass.com.au';
 const businessDivisions = [
   'Business Brokers',
   'Advocacy',
@@ -49,7 +49,7 @@ const JoinUsPage = () => {
       formData.append('comments', form.comments);
       formData.append('cv', form.cv);
 
-      const response = await fetch(`http://${HOSTNAME}:${PORT}/api/join-us`, {
+      const response = await fetch(`${API_BASE_URL}/api/join-us`, {
         method: 'POST',
         body: formData // Don't set Content-Type header for FormData
       });
@@ -97,6 +97,25 @@ const JoinUsPage = () => {
         <div className="joinus-hero-overlay">
           <h1 className="joinus-hero-title">Join Our Team</h1>
           <p className="joinus-hero-subtitle">Be part of something extraordinary</p>
+        </div>
+        <div
+          className="joinus-scroll-arrow"
+          onClick={() => {
+            const el = document.querySelector('.joinus-content-section');
+            if (el) el.scrollIntoView({ behavior: 'smooth' });
+          }}
+          tabIndex={0}
+          role="button"
+          aria-label="Scroll to next section"
+          onKeyPress={e => { if (e.key === 'Enter' || e.key === ' ') {
+            const el = document.querySelector('.joinus-content-section');
+            if (el) el.scrollIntoView({ behavior: 'smooth' });
+          }}}
+        >
+          <svg className="down-arrow-svg" width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="24" cy="24" r="24" fill="rgba(0,0,0,0.0)"/>
+            <path d="M16 20L24 28L32 20" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
         </div>
       </section>
 

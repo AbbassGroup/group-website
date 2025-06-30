@@ -1,15 +1,17 @@
 /* Join Us Page Styles */
 .joinus-page {
   min-height: 100vh;
+  background-image: url('../assets/images/Join Us.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 /* Hero Section */
 .joinus-hero-section {
   height: 100vh;
-  background-image: url('../assets/images/join-us-2.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  background: none;
   position: relative;
   display: flex;
   align-items: center;
@@ -23,7 +25,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.3);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -48,7 +50,19 @@
 /* Main Content Section */
 .joinus-content-section {
   padding: 5rem 0;
-  background: var(--offwhite);
+  background: none;
+  position: relative;
+}
+
+.joinus-content-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 1;
 }
 
 .joinus-content-container {
@@ -59,14 +73,24 @@
   grid-template-columns: 1fr 1fr;
   gap: 4rem;
   align-items: stretch;
+  position: relative;
+  z-index: 2;
 }
 
 /* Left Side - Info Section */
 .joinus-info-col {
   padding: 2rem;
-  background: var(--white);
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.joinus-info-col:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
 }
 
 .joinus-info-col h2 {
@@ -79,7 +103,7 @@
 .joinus-info-col p {
   font-size: 1.1rem;
   line-height: 1.6;
-  color: var(--gray);
+  color: var(--offwhite);
   margin-bottom: 2rem;
 }
 
@@ -102,7 +126,7 @@
 }
 
 .contact-item a {
-  color: var(--primary-blue);
+  color: var(--white);
   text-decoration: none;
   transition: color 0.3s ease;
 }
@@ -124,7 +148,7 @@
 
 .joinus-benefits li {
   padding: 0.5rem 0;
-  color: var(--gray);
+  color: var(--offwhite-dark);
   position: relative;
 }
 
@@ -132,9 +156,17 @@
 /* Right Side - Form Section */
 .joinus-form-col {
   padding: 2rem;
-  background: var(--white);
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.joinus-form-col:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
 }
 
 .joinus-form-col h2 {
@@ -160,11 +192,13 @@
 .joinus-form select,
 .joinus-form textarea {
   padding: 1rem;
-  border: 2px solid var(--gray);
+  background: rgba(255,255,255,0.2);
+  color: var(--black);
+  backdrop-filter: blur(2px);
+  border: 1.5px solid rgba(255,255,255,0.3);
   border-radius: 8px;
   font-size: 1rem;
-  transition: border-color 0.3s ease;
-  background: var(--white);
+  transition: all 0.3s ease;
 }
 
 .joinus-form input:focus,
@@ -172,13 +206,15 @@
 .joinus-form textarea:focus {
   outline: none;
   border-color: var(--primary-blue);
-  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2);
+  background: var(--offwhite);
+  transform: translateY(-2px);
 }
 
 .joinus-form input:disabled,
 .joinus-form select:disabled,
 .joinus-form textarea:disabled {
-  background-color: #f5f5f5;
+  background-color: var(--offwhite);
   cursor: not-allowed;
   opacity: 0.7;
 }
@@ -188,19 +224,27 @@
   min-height: 100px;
 }
 
+.joinus-form input::placeholder,
+.joinus-form textarea::placeholder {
+  color: rgba(0,0,0,0.7);
+  opacity: 1;
+}
+
 .cv-label {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
   font-weight: 500;
-  color: var(--black);
+  color: var(--offwhite);
 }
 
 .cv-label input[type="file"] {
+  background: rgba(255,255,255,0.2);
+  color: var(--black);
+  backdrop-filter: blur(2px);
+  border: 1.5px solid rgba(255,255,255,0.3);
+  border-radius: 8px;
   padding: 0.75rem;
-  border: 2px dashed var(--gray);
-  background: var(--offwhite);
-  cursor: pointer;
 }
 
 .cv-label input[type="file"]:disabled {
@@ -216,7 +260,7 @@
 }
 
 .joinus-submit-btn {
-  background: var(--black);
+  background: linear-gradient(135deg, var(--black) 0%, #333 100%);
   color: var(--white);
   padding: 1rem 2rem;
   border: none;
@@ -226,12 +270,14 @@
   cursor: pointer;
   transition: all 0.3s ease;
   margin-top: 1rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .joinus-submit-btn:hover:not(:disabled) {
-  background: var(--gray);
+  background: linear-gradient(135deg, var(--gray) 0%, #555 100%);
   color: var(--black);
-  transition: all 0.3s ease;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
 
 .joinus-submit-btn:disabled {
@@ -333,6 +379,57 @@
   .joinus-info-col,
   .joinus-form-col {
     padding: 1.5rem;
+  }
+}
+
+.joinus-scroll-arrow {
+  position: absolute;
+  left: 50%;
+  bottom: 2.5rem;
+  transform: translateX(-50%);
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.3s ease;
+  color: var(--white);
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+.joinus-scroll-arrow:focus,
+.joinus-scroll-arrow:hover {
+  transform: translateX(-50%) translateY(6px) scale(1.1);
+}
+
+.down-arrow-svg {
+  width: 48px;
+  height: 48px;
+  display: block;
+  transition: filter 0.2s;
+  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.2));
+}
+
+@media (max-width: 768px) {
+  .joinus-scroll-arrow {
+    bottom: 1.2rem;
+  }
+  .down-arrow-svg {
+    width: 38px;
+    height: 38px;
   }
 }
   

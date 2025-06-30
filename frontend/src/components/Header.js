@@ -32,10 +32,11 @@ const Header = ({ disableScrollEffect, dark }) => {
           <span role="img" aria-label="menu">&#9776;</span>
         </div>
         <ul className="nav-menu">
-          <li className="nav-item"><a href="/businessbrokers" className="nav-link">Business Brokers</a></li>
-          <li className="nav-item"><a href="/advocacy" className="nav-link">Advocacy</a></li>
-          <li className="nav-item"><a href="/finance" className="nav-link">Finance</a></li>
-          <li className="nav-item"><a href="https://abbassglobalproperties.com/" className="nav-link">Global Properties</a></li>
+          <li className="nav-item"><a href="/" className="nav-link">Home</a></li>
+          <li className="nav-item"><a href="/businessbrokers" className="nav-link" target="_blank" rel="noopener noreferrer">Business Brokers</a></li>
+          <li className="nav-item"><a href="/advocacy" className="nav-link" target="_blank" rel="noopener noreferrer">Advocacy</a></li>
+          <li className="nav-item"><a href="/finance" className="nav-link" target="_blank" rel="noopener noreferrer">Finance</a></li>
+          <li className="nav-item"><a href="https://abbassglobalproperties.com/" className="nav-link" target="_blank" rel="noopener noreferrer">Global Properties</a></li>
           <li className="nav-item"><a href="/join-us" className="nav-link">Join Us</a></li>
           <li className="nav-item"><a href="/contact-us" className="nav-link">Contact Us</a></li>
         </ul>

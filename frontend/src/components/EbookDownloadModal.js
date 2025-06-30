@@ -3,7 +3,7 @@ import './EbookDownloadModal.css';
 
 const HOSTNAME = process.env.REACT_APP_HOSTNAME || 'localhost';
 const PORT = process.env.REACT_APP_PORT || 5000;
-
+const API_URL = process.env.REACT_APP_API_URL || 'https://apigroup.abbass.com.au';
 const EbookDownloadModal = ({ open, onClose, ebook }) => {
   const [form, setForm] = useState({ name: '', email: '', phone: '' });
   const [loading, setLoading] = useState(false);
@@ -18,7 +18,7 @@ const EbookDownloadModal = ({ open, onClose, ebook }) => {
 
   const downloadPDF = async (downloadUrl) => {
     try {
-      const response = await fetch(`http://${HOSTNAME}:${PORT}${downloadUrl}`);
+      const response = await fetch(`${API_URL}${downloadUrl}`);
       if (response.ok) {
         const blob = await response.blob();
         const url = window.URL.createObjectURL(blob);
@@ -41,7 +41,7 @@ const EbookDownloadModal = ({ open, onClose, ebook }) => {
     setMessage('');
 
     try {
-      const response = await fetch(`http://${HOSTNAME}:${PORT}/api/ebook`, {
+      const response = await fetch(`${API_URL}/api/ebook`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

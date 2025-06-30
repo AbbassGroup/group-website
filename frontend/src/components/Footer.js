@@ -13,10 +13,10 @@ const Footer = () => {
         <div className="footer-col">
           <h4>Business Units</h4>
           <ul>
-            <li><a href="/businessbrokers">ABBASS Business Brokers</a></li>
-            <li><a href="/advocacy">ABBASS Advocacy</a></li>
-            <li><a href="/finance">ABBASS Finance</a></li>
-            <li><a href="https://abbassglobalproperties.com/">ABBASS Global Properties</a></li>
+            <li><a href="/businessbrokers" target="_blank" rel="noopener noreferrer">ABBASS Business Brokers</a></li>
+            <li><a href="/advocacy" target="_blank" rel="noopener noreferrer">ABBASS Advocacy</a></li>
+            <li><a href="/finance" target="_blank" rel="noopener noreferrer">ABBASS Finance</a></li>
+            <li><a href="https://abbassglobalproperties.com/" target="_blank" rel="noopener noreferrer">ABBASS Global Properties</a></li>
           </ul>
         </div>
         <div className="footer-col">
@@ -24,6 +24,7 @@ const Footer = () => {
           <ul>
             <li><a href="/terms">Terms &amp; Condition</a></li>
             <li><a href="/privacy-policy">Privacy Policy</a></li>
+            <li><a href="/join-us">Join Us</a></li>
             <li><a href="/contact-us">Contact Us</a></li>
           </ul>
         </div>
