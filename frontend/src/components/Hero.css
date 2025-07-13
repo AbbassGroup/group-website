@@ -229,5 +229,12 @@
   }
 }
 
+/* Hide scroll arrow on mobile devices */
+@media (max-width: 768px) {
+  .hero-scroll-arrow {
+    display: none !important;
+  }
+}
+
 /* Remove old .scroll-down-btn styles */
 .scroll-down-btn { display: none; } 

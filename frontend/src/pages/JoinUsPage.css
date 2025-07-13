@@ -492,11 +492,7 @@
 
 @media (max-width: 768px) {
   .joinus-scroll-arrow {
-    bottom: 1.2rem;
-  }
-  .down-arrow-svg {
-    width: 38px;
-    height: 38px;
+    display: none !important;
   }
 }
 
