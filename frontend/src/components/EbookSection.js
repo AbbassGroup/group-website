@@ -89,6 +89,90 @@ const EbookSection = () => {
   const startIdx = page * EBOOKS_PER_PAGE;
   const visibleEbooks = ebooks.slice(startIdx, startIdx + EBOOKS_PER_PAGE);
 
+  // Detect mobile view
+  const isMobile = typeof window !== 'undefined' && window.matchMedia('(max-width: 600px)').matches;
+
+  // For mobile, show all ebooks in a single row, no arrows, horizontal scroll
+  const renderEbooks = () => {
+    if (isMobile) {
+      return (
+        <div className="ebooks-grid mobile-scroll">
+          {ebooks.map((book, idx) => (
+            <div className="ebook-card" key={idx}>
+              <div className="ebook-cover">
+                <img src={book.image} alt={book.title} />
+              </div>
+              <div className="ebook-info">
+                <h3>{book.title}</h3>
+                <p>{book.subtitle}</p>
+                <a
+                  href="#"
+                  className="download-now-btn"
+                  onClick={e => {
+                    e.preventDefault();
+                    setSelectedEbook(book);
+                    setModalOpen(true);
+                  }}
+                >
+                  Download Now
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
+      );
+    }
+    // Desktop/tablet: keep paginated view with arrows
+    return (
+      <>
+        <button
+          className="ebooks-arrow left"
+          onClick={() => setPage(page - 1)}
+          aria-label="Previous"
+          disabled={page === 0}
+        >
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15.5 19L8.5 12L15.5 5" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
+        </button>
+        <div className="ebooks-grid">
+          {visibleEbooks.map((book, idx) => (
+            <div className="ebook-card" key={startIdx + idx}>
+              <div className="ebook-cover">
+                <img src={book.image} alt={book.title} />
+              </div>
+              <div className="ebook-info">
+                <h3>{book.title}</h3>
+                <p>{book.subtitle}</p>
+                <a
+                  href="#"
+                  className="download-now-btn"
+                  onClick={e => {
+                    e.preventDefault();
+                    setSelectedEbook(book);
+                    setModalOpen(true);
+                  }}
+                >
+                  Download Now
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
+        <button
+          className="ebooks-arrow right"
+          onClick={() => setPage(page + 1)}
+          aria-label="Next"
+          disabled={page === maxPage}
+        >
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8.5 5L15.5 12L8.5 19" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
+        </button>
+      </>
+    );
+  };
+
   return (
     <section className="ebook-section">
       <div className="ebook-container">
@@ -96,50 +180,7 @@ const EbookSection = () => {
           <h2>Want to Build Your Own Business?</h2>
           <p>Download our free eBooks and learn how to start your journey with ABBASS.</p>
           <div className="ebooks-scroll-container no-scrollbar">
-            <button
-              className="ebooks-arrow left"
-              onClick={() => setPage(page - 1)}
-              aria-label="Previous"
-              disabled={page === 0}
-            >
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M15.5 19L8.5 12L15.5 5" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </button>
-            <div className="ebooks-grid">
-              {visibleEbooks.map((book, idx) => (
-                <div className="ebook-card" key={startIdx + idx}>
-                  <div className="ebook-cover">
-                    <img src={book.image} alt={book.title} />
-                  </div>
-                  <div className="ebook-info">
-                    <h3>{book.title}</h3>
-                    <p>{book.subtitle}</p>
-                    <a
-                      href="#"
-                      className="download-now-btn"
-                      onClick={e => {
-                        e.preventDefault();
-                        setSelectedEbook(book);
-                        setModalOpen(true);
-                      }}
-                    >
-                      Download Now
-                    </a>
-                  </div>
-                </div>
-              ))}
-            </div>
-            <button
-              className="ebooks-arrow right"
-              onClick={() => setPage(page + 1)}
-              aria-label="Next"
-              disabled={page === maxPage}
-            >
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M8.5 5L15.5 12L8.5 19" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </button>
+            {renderEbooks()}
           </div>
         </div>
       </div>

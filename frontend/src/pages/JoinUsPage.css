@@ -6,6 +6,7 @@
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  /* overflow-x: hidden; */
 }
 
 /* Hero Section */
@@ -25,7 +26,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.5);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -61,7 +62,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.5);
   z-index: 1;
 }
 
@@ -79,13 +80,15 @@
 
 /* Left Side - Info Section */
 .joinus-info-col {
-  padding: 2rem;
+  padding: 2rem 1.2rem;
   background: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.3);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.10);
   border-radius: 15px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 0;
+  width: 100%;
+  max-width: 600px;
 }
 
 .joinus-info-col:hover {
@@ -96,20 +99,21 @@
 .joinus-info-col h2 {
   font-size: 2rem;
   color: var(--black);
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.2rem;
   font-weight: 600;
 }
 
 .joinus-info-col p {
   font-size: 1.1rem;
   line-height: 1.6;
-  color: var(--offwhite);
-  margin-bottom: 2rem;
+  color: var(--offwhite-dark);
+  /* margin-bottom: 2rem; */
 }
 
 .joinus-contact-info {
   margin-bottom: 2rem;
 }
+
 
 .contact-item {
   display: flex;
@@ -155,13 +159,15 @@
 
 /* Right Side - Form Section */
 .joinus-form-col {
-  padding: 2rem;
+  padding: 2rem 1.2rem;
   background: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.3);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.10);
   border-radius: 15px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 2rem;
+  width: 100%;
+  max-width: 600px;
 }
 
 .joinus-form-col:hover {
@@ -207,14 +213,14 @@
   outline: none;
   border-color: var(--primary-blue);
   box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2);
-  background: var(--offwhite);
+  background: rgba(255, 255, 255, 1);
   transform: translateY(-2px);
 }
 
 .joinus-form input:disabled,
 .joinus-form select:disabled,
 .joinus-form textarea:disabled {
-  background-color: var(--offwhite);
+  background-color: #f5f5f5;
   cursor: not-allowed;
   opacity: 0.7;
 }
@@ -271,6 +277,8 @@
   transition: all 0.3s ease;
   margin-top: 1rem;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  display: block;
 }
 
 .joinus-submit-btn:hover:not(:disabled) {
@@ -281,7 +289,7 @@
 }
 
 .joinus-submit-btn:disabled {
-  background: #ccc;
+  background: var(--offwhite);
   cursor: not-allowed;
   opacity: 0.7;
 }
@@ -310,7 +318,7 @@
 /* Map Section */
 .joinus-map-section {
   padding: 4rem 0;
-  background: white;
+  background: var(--white);
 }
 
 .map-container {
@@ -322,7 +330,7 @@
 
 .map-container h2 {
   font-size: 2.5rem;
-  color: #333;
+  color: var(--black);
   margin-bottom: 2rem;
   font-weight: 600;
 }
@@ -330,8 +338,37 @@
 /* Responsive Design */
 @media (max-width: 768px) {
   .joinus-content-container {
-    grid-template-columns: 1fr;
-    gap: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+    padding: 0 0.5rem;
+  }
+  .joinus-info-col,
+  .joinus-form-col {
+    padding: 1.2rem 0.7rem;
+    max-width: 100%;
+  }
+  .joinus-info-col {
+    margin-top: 1.2rem;
+    margin-bottom: 1.2rem;
+  }
+  .joinus-form-col {
+    margin-bottom: 2rem;
+  }
+  .joinus-submit-btn {
+    width: 100%;
+    display: block;
+  }
+  .joinus-hero-overlay {
+    left: 0;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 1.2rem 0.5rem;
+    margin: 0;
+    align-items: center;
+    justify-content: center;
   }
 
   .joinus-hero-title {
@@ -347,27 +384,32 @@
     font-size: 2rem;
   }
 
-  .contact-item {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.5rem;
-  }
-
-  .contact-item strong {
-    min-width: auto;
+  .contact-map-section {
+    padding: 0 20px;
   }
 }
 
 @media (max-width: 480px) {
-  .joinus-hero-overlay {
-    padding: 2rem;
-    margin: 0 1rem;
+  .joinus-content-container {
+    padding: 0 0.2rem;
+    gap: 0.7rem;
   }
-
-  .joinus-hero-title {
-    font-size: 2rem;
+  .joinus-info-col,
+  .joinus-form-col {
+    padding: 1rem 0.3rem;
+    max-width: 100%;
   }
-
+  .joinus-info-col {
+    margin-top: 0.7rem;
+    margin-bottom: 0.7rem;
+  }
+  .joinus-form-col {
+    margin-bottom: 1.2rem;
+  }
+  .joinus-submit-btn {
+    width: 100%;
+    display: block;
+  }
   .joinus-content-section {
     padding: 3rem 0;
   }
@@ -380,6 +422,26 @@
   .joinus-form-col {
     padding: 1.5rem;
   }
+
+  .contact-map-section {
+    padding: 0 10px;
+  }
+}
+
+.abbass-support-message {
+  border-radius: 10px;
+  /* padding: 1.5rem 1.2rem; */
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.09rem;
+  /* color: var(--gray); */
+  line-height: 1.7;
+  font-weight: 500;
+  text-align: left;
+}
+
+.abbass-support-message p {
+  color: var(--offwhite-dark);
 }
 
 .joinus-scroll-arrow {
@@ -431,5 +493,14 @@
     width: 38px;
     height: 38px;
   }
+}
+
+.joinus-form input[type="file"] {
+  background: rgba(255,255,255,0.2);
+  color: var(--black);
+  backdrop-filter: blur(2px);
+  border: 1.5px solid rgba(255,255,255,0.3);
+  border-radius: 8px;
+  padding: 0.75rem;
 }
   
