@@ -130,9 +130,14 @@
 }
 
 .contact-item a {
-  color: var(--white);
+  color: var(--offwhite-dark);
   text-decoration: none;
   transition: color 0.3s ease;
+}
+
+.contact-item span {
+  color: var(--offwhite-dark);
+  text-decoration: none;
 }
 
 .contact-item a:hover {

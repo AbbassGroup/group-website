@@ -24,21 +24,24 @@ const Services = () => {
       logo: advocacyLogo,
       image: advocacyImage,
       link: '/advocacy',
-      cta: 'Buy a Property'
+      cta: 'Buy a Property',
+      target: '_blank'
     },
     {
       description: 'Finance solutions tailored to your needs.',
       logo: financeLogo,
       image: financeImage,
       link: '/finance',
-      cta: 'Get Finance'
+      cta: 'Get Finance',
+      target: '_blank'
     },
     {
       description: 'Invest in premium properties in Dubai.',
       logo: globalPropertiesLogo,
       image: globalPropertiesImage,
       link: 'https://abbassglobalproperties.com/',
-      cta: 'Invest in Dubai'
+      cta: 'Invest in Dubai',
+      target: '_blank'
     }
   ];
 
@@ -53,7 +56,7 @@ const Services = () => {
                 <img src={division.logo} alt={division.title + ' logo'} className="division-logo" />
                 <img src={division.image} alt={division.title + ' images'} className="division-image" />
                 <p className="division-desc">{division.description}</p>
-                <a href={division.link} className="btn btn-secondary division-cta">{division.cta}</a>
+                <a href={division.link} className="btn btn-secondary division-cta" target={division.target} rel="noopener noreferrer">{division.cta}</a>
               </div>
             ))}
           </div>

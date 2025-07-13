@@ -138,7 +138,9 @@ const JoinUsPage = () => {
               </div>
               <div className="contact-item">
                 <strong>Location:</strong>
-                <span>102/24 Albert Road, South Melbourne, VIC 3205</span>
+                <span>101 Moray Street, South Melbourne, VIC 3205</span>
+                <br />
+                <span>388 George Street, Sydney, NSW 2000</span>
               </div>
             </div>
 
