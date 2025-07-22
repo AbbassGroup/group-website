@@ -113,7 +113,7 @@ const ContactUsPage = () => {
           {/* Left Side - Info Section */}
           <div className="contactus-info-col">
             <h2>Get in Touch</h2>
-            <p>Ready to take the next step? Whether you're looking to buy, sell, or invest, our team of experts is here to help you achieve your goals. Contact us today for a personalized consultation.</p>
+            <p>Ready to take the next step? Whether you're looking to buy, sell, or invest, our team of experts is here to help you achieve your goals. Contact us today for a personalised consultation.</p>
             
             <div className="contactus-contact-info">
               <div className="contact-item">
@@ -126,8 +126,8 @@ const ContactUsPage = () => {
               </div>
               <div className="contact-item">
                 <strong>Location:</strong>
-                <span>101 Moray Street, South Melbourne, VIC 3205</span>
-                <span>388 George Street, Sydney, NSW 2000</span>
+                <span>101 Moray St, South Melbourne VIC 3205</span>
+                <span>388 George St, Sydney NSW 2000</span>
               </div>
             </div>
 

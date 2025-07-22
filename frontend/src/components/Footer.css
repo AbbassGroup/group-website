@@ -42,7 +42,7 @@
 .footer-address {
   color: var(--gray);
   font-size: 1.05rem;
-  margin-top: 0.5rem;
+  /* margin-top: 0.5rem; */
 }
 
 .footer-col h4 {

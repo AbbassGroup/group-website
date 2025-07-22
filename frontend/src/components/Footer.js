@@ -8,7 +8,8 @@ const Footer = () => {
       <div className="footer-new-container">
         <div className="footer-col logo-col">
           <img src={logo} alt="ABBASS Logo" className="footer-logo" />
-          <div className="footer-address">102 / 24 Albert Road, South Melbourne, VIC 3205</div>
+          <div className="footer-address">101 Moray St, South Melbourne VIC 3205</div>
+          <div className="footer-address">388 George St, Sydney NSW 2000</div>
         </div>
         <div className="footer-col">
           <h4>Business Units</h4>

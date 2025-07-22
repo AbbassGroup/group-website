@@ -1,7 +1,7 @@
 /* Contact Us Page Styles */
 .contactus-page {
   min-height: 100vh;
-  background-image: url('../assets/images/Contact Us.png');
+  background-image: url('../assets/images/Desktop.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -260,9 +260,11 @@
 /* Responsive Design */
 @media (max-width: 768px) {
   .contactus-page {
-    background-attachment: scroll;
+    background-image: url('../assets/images/Mobile.jpg');
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
   }
   .contactus-content-container {
     grid-template-columns: 1fr;
@@ -308,6 +310,14 @@
 }
 
 @media (max-width: 480px) {
+  .contactus-page {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-image: url('../assets/images/Mobile.jpg');
+  }
+  
   .contactus-content-container {
     padding: 0;
     gap: 0.7rem;
@@ -424,4 +434,22 @@
   border: 1.5px solid rgba(255,255,255,0.3);
   border-radius: 8px;
   padding: 0.75rem;
+}
+
+@media (max-width: 768px) {
+  .contactus-map-section {
+    padding-left: 9.5vw;
+  }
+  .map-container {
+    padding-left: 5vw;
+  }
+}
+
+@media (max-width: 480px) {
+  .contactus-map-section {
+    padding-left: 4.5vw;
+  }
+  .map-container {
+    padding-left: 2vw;
+  }
 }
