@@ -17,7 +17,8 @@ const Services = () => {
       logo: businessBrokerLogo,
       image: businessBrokerImage,
       link: '/businessbrokers',
-      cta: 'Sell Your Business'
+      cta: 'Sell Your Business',
+      target: '_blank'
     },
     {
       description: 'Professional representation for your property journey.',

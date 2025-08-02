@@ -43,7 +43,7 @@ const Header = ({ disableScrollEffect, dark }) => {
         </div>
         <ul className="nav-menu">
           <li className="nav-item"><Link to="/" className={`nav-link${isActive('/') ? ' active' : ''}`}>Home</Link></li>
-          <li className="nav-item"><a href="/businessbrokers" className="nav-link" target="_blank" rel="noopener noreferrer">Businesss Brokers</a></li>
+          <li className="nav-item"><a href="/businessbrokers" className="nav-link" target="_blank" rel="noopener noreferrer">Business Brokers</a></li>
           <li className="nav-item"><Link to="/advocacy" className={`nav-link${isActive('/advocacy') ? ' active' : ''}`}>Advocacy</Link></li>
           <li className="nav-item"><Link to="/finance" className={`nav-link${isActive('/finance') ? ' active' : ''}`}>Finance</Link></li>
           <li className="nav-item"><a href="https://abbassglobalproperties.com/" className="nav-link" target="_blank" rel="noopener noreferrer">Global Properties</a></li>
