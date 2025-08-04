@@ -21,7 +21,6 @@ function AppContent() {
   const location = useLocation();
   const isPrivacyPolicy = location.pathname === '/privacy-policy';
   const isTerms = location.pathname === '/terms';
-  const isMaintenance = location.pathname === '/advocacy' || location.pathname === '/finance';
   const disableScrollEffect = isPrivacyPolicy || isTerms;
   const darkNavbar = isPrivacyPolicy || isTerms;
   return (
@@ -44,8 +43,6 @@ function AppContent() {
           <Route path="/contact-us" element={<ContactUsPage />} />
           <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
           <Route path="/terms" element={<TermsPage />} />
-          // <Route path="/advocacy" element={<MaintenancePage serviceName="Advocacy" />} />
-          // <Route path="/finance" element={<MaintenancePage serviceName="Finance" />} />
         </Routes>
       </main>
       {!isMaintenance && <Footer />}
