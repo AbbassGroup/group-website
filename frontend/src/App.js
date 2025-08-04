@@ -44,8 +44,8 @@ function AppContent() {
           <Route path="/contact-us" element={<ContactUsPage />} />
           <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
           <Route path="/terms" element={<TermsPage />} />
-          <Route path="/advocacy" element={<MaintenancePage serviceName="Advocacy" />} />
-          <Route path="/finance" element={<MaintenancePage serviceName="Finance" />} />
+          // <Route path="/advocacy" element={<MaintenancePage serviceName="Advocacy" />} />
+          // <Route path="/finance" element={<MaintenancePage serviceName="Finance" />} />
         </Routes>
       </main>
       {!isMaintenance && <Footer />}
